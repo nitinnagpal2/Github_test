@@ -1,0 +1,117 @@
+Build sequence for target(s) `sendmail' is [info, clean, increment_build_number, makedir, compile, warp, deploy, sendmail]
+Complete build sequence is [info, clean, increment_build_number, makedir, compile, warp, deploy, sendmail, ]
+
+info:
+     [echo]  Welcome here, we are using ant version Apache Ant(TM) version 1.9.7 compiled on April 9 2016
+     [echo]  My company name is Interglobe technologies  and my team is Software Congiguration Management 
+     [echo]  Loccation of ant file D:\SCM\Tute\Ant\Hello world\build.xml and Build version Productname_1.0.0 
+info:  duration 0 seconds
+
+clean:
+   [delete] Deleting directory D:\SCM\Tute\Ant\Hello world\build
+   [delete] Deleting D:\SCM\Tute\Ant\Hello world\build\com\journaldev\first\FirstServlet.class
+   [delete] Deleting directory D:\SCM\Tute\Ant\Hello world\build\com\journaldev\first
+   [delete] Deleting directory D:\SCM\Tute\Ant\Hello world\build\com\journaldev
+   [delete] Deleting directory D:\SCM\Tute\Ant\Hello world\build\com
+   [delete] Deleting directory D:\SCM\Tute\Ant\Hello world\build
+   [delete] Deleting directory D:\SCM\Tute\Ant\Hello world\jar
+   [delete] Deleting D:\SCM\Tute\Ant\Hello world\jar\30.jar
+   [delete] Deleting directory D:\SCM\Tute\Ant\Hello world\jar
+   [delete] Deleting directory D:\SCM\Tute\Ant\Hello world\deploy
+   [delete] Deleting D:\SCM\Tute\Ant\Hello world\deploy\30.jar
+   [delete] Deleting directory D:\SCM\Tute\Ant\Hello world\deploy
+clean:  duration 0 seconds
+
+increment_build_number:
+[propertyfile] Updating property file: D:\SCM\Tute\Ant\Hello world\build.number
+     [echo]  build number is 31
+increment_build_number:  duration 0 seconds
+
+makedir:
+    [mkdir] Created dir: D:\SCM\Tute\Ant\Hello world\build
+    [mkdir] Created dir: D:\SCM\Tute\Ant\Hello world\jar
+    [mkdir] Created dir: D:\SCM\Tute\Ant\Hello world\deploy
+makedir:  duration 0 seconds
+
+compile:
+    [javac] D:\SCM\Tute\Ant\Hello world\build.xml:63: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] com\journaldev\first\FirstServlet.java added as com\journaldev\first\FirstServlet.class doesn't exist.
+    [javac] Compiling 1 source file to D:\SCM\Tute\Ant\Hello world\build
+    [javac] Using modern compiler
+    [javac] Compilation arguments:
+'-d'
+'D:\SCM\Tute\Ant\Hello world\build'
+'-classpath'
+'D:\SCM\Tute\Ant\Hello world\build;D:\SCM\Tute\Ant\Hello world\WebContent\WEB-INF\lib\servlet-api.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-launcher.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-antlr.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-apache-bcel.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-apache-bsf.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-apache-log4j.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-apache-oro.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-apache-regexp.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-apache-resolver.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-apache-xalan2.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-commons-logging.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-commons-net.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-jai.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-javamail.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-jdepend.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-jmf.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-jsch.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-junit.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-junit4.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-netrexx.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-swing.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant-testutil.jar;D:\SCM\Software\apache-ant-1.9.7\lib\ant.jar;D:\SCM\Software\apache-ant-1.9.7\lib\javax.mail.jar;C:\Program Files\Java\jdk1.7.0_79\lib\tools.jar'
+'-sourcepath'
+'D:\SCM\Tute\Ant\Hello world\src'
+'-g:none'
+
+The ' characters around the executable and arguments are
+not part of the command.
+    [javac] File to be compiled:
+    D:\SCM\Tute\Ant\Hello world\src\com\journaldev\first\FirstServlet.java
+compile:  duration 0 seconds
+
+warp:
+ [property] Loading D:\SCM\Tute\Ant\Hello world\build.number
+Override ignored for property "ECHO"
+Override ignored for property "build.number"
+      [jar] Building jar: D:\SCM\Tute\Ant\Hello world\jar\31.jar
+      [jar] adding directory META-INF/
+      [jar] adding entry META-INF/MANIFEST.MF
+      [jar] adding directory com/
+      [jar] adding directory com/journaldev/
+      [jar] adding directory com/journaldev/first/
+      [jar] adding entry com/journaldev/first/FirstServlet.class
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+Location: D:\SCM\Tute\Ant\Hello world\build.xml:68: 
+warp:  duration 0 seconds
+
+deploy:
+     [copy] 31.jar added as 31.jar doesn't exist.
+     [copy] No sources found.
+     [copy] Copying 1 file to D:\SCM\Tute\Ant\Hello world\deploy
+     [copy] Copying D:\SCM\Tute\Ant\Hello world\jar\31.jar to D:\SCM\Tute\Ant\Hello world\deploy\31.jar
+deploy:  duration 0 seconds
+
+sendmail:
+Project base dir set to: D:\SCM\Tute\Ant\Hello world
+      [ant] calling target(s) [default] in build file D:\SCM\Tute\Ant\Hello world\mail.xml
+parsing buildfile D:\SCM\Tute\Ant\Hello world\mail.xml with URI = file:/D:/SCM/Tute/Ant/Hello%20world/mail.xml
+Project base dir set to: D:\SCM\Tute\Ant\Hello world
+ [property] Loading D:\SCM\Tute\Ant\Hello world\build.properties
+Override ignored for property "build.major.number"
+Override ignored for property "create.jar"
+Override ignored for property "build"
+Override ignored for property "companyname"
+Override ignored for property "buildversion"
+Override ignored for property "username"
+Override ignored for property "lib"
+Override ignored for property "deploy.path"
+Override ignored for property "myteam"
+Override ignored for property "build.revision.number"
+Override ignored for property "src"
+Override ignored for property "build.minor.number"
+ [property] Loading D:\SCM\Tute\Ant\Hello world\build.number
+Override ignored for property "ECHO"
+Override ignored for property "build.number"
+      [ant] Entering D:\SCM\Tute\Ant\Hello world\mail.xml...
+Build sequence for target(s) `email' is [email]
+Complete build sequence is [email, ]
+
+email:
+Property "env.mailpass" has not been set
+     [mail] Using MIME mail
+     [mail] Sending email: Test Build completed.
+     [mail] From nitin.nagpal@travelport.com
+     [mail] ReplyTo []
+     [mail] To [nitin.nagpal@travelport.com]
+     [mail] Cc []
+     [mail] Bcc []
+     [mail] Sent email with 1 attachment
+email:  duration 2 seconds
+      [ant] Exiting D:\SCM\Tute\Ant\Hello world\mail.xml.
+sendmail:  duration 2 seconds
+
+BUILD SUCCESSFUL
