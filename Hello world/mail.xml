@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<project name="Hello world Project_mail" default="email" basedir=".">
+
+<!-- property file declare here-->
+
+<property file="./build.properties"/>
+<property file="./build.number"/>
+	<target name='email' >
+		<mail mailhost='mail1.wspan.com' mailport='25' user='${username}'  password='${env.mailpass}'  messageMimeType='text/html'
+       tolist='${username}' from='${username}'  subject='Test Build completed.' >
+	   <attachments>
+		<fileset dir="log">
+			<include name="${build.number}.txt"/>
+		</fileset>
+	</attachments>
+		<message>
+        This is test mail.
+		</message>
+		</mail>
+  </target>
+</project>

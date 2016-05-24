@@ -1,17 +1,18 @@
 <?xml version="1.0"?>
-<project name="Hello world Project" default="deploy" basedir=".">
+<project name="Hello world Project" default="sendmail" basedir=".">
 
 <!-- property file declare here-->
 
 <property file="./build.properties"/>
-
+<property file="./build.number"/>
 <!--<property name="build" value="${basedir}/build"/>
 <property name="src" location="${basedir}/src"/>
 <property name="lib" location="${basedir}/WebContent/WEB-INF/lib"/>
 <property name="create.jar" location="${basedir}/jar"/>
 <property name="deploy.path" location="${basedir}/deploy"/>
 -->
-
+   
+  
 <!-- path of .jar files -->
 <path id="jar.file">
 	<fileset dir="${lib}">
@@ -25,6 +26,9 @@
 	<fileset id="files.for.deploy" dir="${create.jar}">
 		<include name="*.jar"/>
 	</fileset>
+	
+	<!--creating log to use recorder -->
+<record name="${basedir}/log/${build.number}.txt" action="start" loglevel="verbose"/>
 
 	<target name="info" >
 	<!-- this is system property -->
@@ -35,13 +39,21 @@
 		<echo> Loccation of ant file ${ant.file} and Build version ${buildversion} </echo>
 	</target>
 	
-	<target name="clean" depends ="info" description="delete the build folder">
+	<target name="clean"  depends="info" description="delete the build folder">
 		<delete dir="${build}"/>
 		<delete dir="${create.jar}"/>
 		<delete dir="${deploy.path}"/>
 	</target>
 	
-	<target name="makedir" depends="clean" description="create directory">
+	<target name="increment_build_number" depends="clean">
+    <propertyfile file="./build.number"
+                  comment="Build Number for ANT. Edit not!">
+    <entry key="build.number" type="int" operation="+" default="0" />
+    </propertyfile>
+	
+	<echo> build number is ${build.number}</echo>
+    </target>
+	<target name="makedir" depends="increment_build_number" description="create directory">
 		<mkdir dir="${build}"/>
 		<mkdir dir="${create.jar}"/>
 		<mkdir dir="${deploy.path}"/>
@@ -52,7 +64,8 @@
 	</target>
 	
 	<target name="warp" depends="compile" description="create jar files">
-		<jar destfile="${create.jar}/${buildversion}.jar">
+	<property file="./build.number"/>
+		<jar destfile="${create.jar}/${build.number}.jar">
 		<fileset refid="files.for.jar"/>
 		</jar>
 	</target>
@@ -62,4 +75,25 @@
 		<fileset refid="files.for.deploy"/>
 		</copy>
 	</target>
+	<!--
+	<target name='email' depends="deploy">
+		<mail mailhost='mail1.wspan.com' mailport='25' user='${username}'  password='${env.mailpass}'  messageMimeType='text/html'
+       tolist='${username}' from='${username}'  subject='Test Build completed.' >
+	   <attachments>
+		<fileset dir="log">
+			<include name="${build.number}.txt"/>
+		</fileset>
+	</attachments>
+		<message>
+        This is test mail.
+		</message>
+		</mail>
+  </target>
+  -->
+  <!-- call another build file mail.xml use for sending mail -->
+  <target name="sendmail" depends="deploy" >
+     <ant antfile="mail.xml" dir="." />
+  </target>
+  
+  <!--<fail>Something wrong here.</fail>-->
 </project>
