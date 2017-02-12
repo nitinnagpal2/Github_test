@@ -1,2 +1,7 @@
 this is the text file
 
+
+----set configuration ----
+--> git config --global user.name "nitinnagpal2" --> this is for set the username of author
+--> git config --global user.email "nitinnagpal2@gmail.com" this is for set the email of author
+
