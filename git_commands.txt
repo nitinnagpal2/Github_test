@@ -1,7 +1,35 @@
 this is the text file
 
 
-----set configuration ----
---> git config --global user.name "nitinnagpal2" --> this is for set the username of author
---> git config --global user.email "nitinnagpal2@gmail.com" this is for set the email of author
+---->check origin----
+	$ git remote -v
+
+---->initialize the repository----
+	$ git init ::: create the .git hidden folder in the repo to ensure the create respostry
+
+---->add the remote repo----
+	$ git add origin https://github.com/nitinnagpal2/Github_test.git
+	::: origin name could be anything eg. origin, myorigin etc...
+---->remove the remote repo----
+	$ git remove <remote_repo_name>
+
+---->set configuration ----
+	$ git config --global user.name "nitinnagpal2" ::: this is for set the username of author
+	$ git config --global user.email "nitinnagpal2@gmail.com" ::: this is for set the email of author
+
+---->add file----
+	$ git add <filename> ::: this command use for stage the file
+---->commit file ----
+	$ git commit -m "first commit"
+---->push file ----
+	$ git push origin firstbranch ::: this is for index the changes 
+
+---->check log---
+	$ git log ::: this command use for check the commit log ::: message print when we hit this command are::
+
+	commit cabfb877dbead4edf4adb0c7465ec4c37aeaa77b
+	Author: Nitin Nagpal <nitinnagpal2@gmail.com> :: this is author details
+Date:   Sun Feb 12 10:07:29 2017 +0530 :: date of commit
+
+    add git command file ::this is message
 
